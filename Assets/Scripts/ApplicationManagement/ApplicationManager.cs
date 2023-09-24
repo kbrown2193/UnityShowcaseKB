@@ -68,4 +68,16 @@ public class ApplicationManager : MonoBehaviour
         // Initialize your game here
         CurrentState = ApplicationState.Startup;
     }
+
+    // Function to exit the application
+    public void ExitApplication()
+    {
+#if UNITY_EDITOR
+        // In the Unity Editor, stop playing the game
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        // In a built application, quit the application
+        Application.Quit();
+#endif
+    }
 }
