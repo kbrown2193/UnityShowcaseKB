@@ -7,6 +7,7 @@ public class NewGameMenu : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private TMP_InputField newGameSaveInputText;
+    [SerializeField] private MainMenu mainMenu;
 
     private string newGameLevelName = "USKB_01_Demo";
 
@@ -35,6 +36,7 @@ public class NewGameMenu : MonoBehaviour
             gameSaveManager.CreateSave(saveName, newGameData);
 
             // Load the  Level for a new game
+            mainMenu.SetMainMenuPage(MainMenu.MainMenuPage.MainMenuFadeOut);
             LevelLoader.Instance.BeginLoadingLevel(newGameLevelName);
         }
     }

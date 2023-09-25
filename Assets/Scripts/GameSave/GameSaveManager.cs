@@ -7,7 +7,6 @@ public class GameSaveManager : MonoBehaviour
     #region Singleton
     private static GameSaveManager instance;
 
-
     public static GameSaveManager Instance
     {
         get
@@ -49,6 +48,9 @@ public class GameSaveManager : MonoBehaviour
     private string saveFolderName = "GameSaves";
     private string saveFolderPath;
 
+    // Constant value for the file extension
+    private const string fileExtension = ".json";
+
     // Check if any game save file exists
     public bool AnySaveExists()
     {
@@ -59,19 +61,19 @@ public class GameSaveManager : MonoBehaviour
     // Check if a specific game save file exists
     public bool SaveExists(string saveFileName)
     {
-        string saveFilePath = Path.Combine(saveFolderPath, saveFileName);
+        string saveFilePath = Path.Combine(saveFolderPath, saveFileName + fileExtension);
         return File.Exists(saveFilePath);
     }
 
     // Get the names of all game save files
     public string[] GetAllSaveNames()
     {
-        string[] saveFiles = Directory.GetFiles(saveFolderPath);
+        string[] saveFiles = Directory.GetFiles(saveFolderPath, "*" + fileExtension);
         List<string> saveNames = new List<string>();
 
         foreach (string saveFile in saveFiles)
         {
-            saveNames.Add(Path.GetFileName(saveFile));
+            saveNames.Add(Path.GetFileNameWithoutExtension(saveFile));
         }
 
         return saveNames.ToArray();
@@ -80,7 +82,8 @@ public class GameSaveManager : MonoBehaviour
     // Create a new game save
     public void CreateSave(string saveFileName, GameData gameData)
     {
-        string saveFilePath = Path.Combine(saveFolderPath, saveFileName);
+        string fullSaveFileName = saveFileName + fileExtension;
+        string saveFilePath = Path.Combine(saveFolderPath, fullSaveFileName);
 
         // Serialize the game data to JSON
         string json = JsonUtility.ToJson(gameData);
@@ -92,7 +95,8 @@ public class GameSaveManager : MonoBehaviour
     // Load a game save
     public GameData LoadSave(string saveFileName)
     {
-        string saveFilePath = Path.Combine(saveFolderPath, saveFileName);
+        string fullSaveFileName = saveFileName + fileExtension;
+        string saveFilePath = Path.Combine(saveFolderPath, fullSaveFileName);
 
         // Check if the save file exists before attempting to load it
         if (File.Exists(saveFilePath))
@@ -106,7 +110,7 @@ public class GameSaveManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Save file does not exist: " + saveFileName);
+            Debug.LogError("Save file does not exist: " + fullSaveFileName);
             return null;
         }
     }
@@ -114,7 +118,8 @@ public class GameSaveManager : MonoBehaviour
     // Update an existing game save
     public void Save(string saveFileName, GameData gameData)
     {
-        string saveFilePath = Path.Combine(saveFolderPath, saveFileName);
+        string fullSaveFileName = saveFileName + fileExtension;
+        string saveFilePath = Path.Combine(saveFolderPath, fullSaveFileName);
 
         // Serialize the updated game data to JSON
         string json = JsonUtility.ToJson(gameData);
@@ -126,7 +131,8 @@ public class GameSaveManager : MonoBehaviour
     // Delete a game save
     public void DeleteSave(string saveFileName)
     {
-        string saveFilePath = Path.Combine(saveFolderPath, saveFileName);
+        string fullSaveFileName = saveFileName + fileExtension;
+        string saveFilePath = Path.Combine(saveFolderPath, fullSaveFileName);
 
         // Check if the save file exists before attempting to delete it
         if (File.Exists(saveFilePath))
@@ -135,7 +141,7 @@ public class GameSaveManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Cannot delete save file as it does not exist: " + saveFileName);
+            Debug.LogError("Cannot delete save file as it does not exist: " + fullSaveFileName);
         }
     }
 }

@@ -8,4 +8,10 @@ public class Settings : MonoBehaviour
     [SerializeField] private AudioSettings audioSettings;
     [SerializeField] private ControlSettings controlSettings;
     [SerializeField] private GameSettings gameSettings;
+
+    private void Awake()
+    {
+        // Ensure that this GameObject persists across scene changes
+        DontDestroyOnLoad(this.gameObject);
+    }
 }
