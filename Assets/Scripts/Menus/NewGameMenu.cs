@@ -6,7 +6,9 @@ using TMPro; // Import TextMeshPro
 public class NewGameMenu : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    [SerializeField] private TMP_InputField newGameSaveInputText; // Reference to the InputField
+    [SerializeField] private TMP_InputField newGameSaveInputText;
+
+    private string newGameLevelName = "USKB_01_Demo";
 
     // Call this function when the "New Game" button is pressed
     public void NewGameSaveButtonPress()
@@ -32,7 +34,8 @@ public class NewGameMenu : MonoBehaviour
             GameData newGameData = new GameData(saveName); // Initialize your game data here
             gameSaveManager.CreateSave(saveName, newGameData);
 
-            // Optionally, you can perform other actions here after creating the save.
+            // Load the  Level for a new game
+            LevelLoader.Instance.BeginLoadingLevel(newGameLevelName);
         }
     }
 
@@ -40,7 +43,6 @@ public class NewGameMenu : MonoBehaviour
     private void GameSaveAlreadyExists()
     {
         // Implement your logic for when a save with the same name already exists.
-        // You can show an error message or handle it as needed.
         Debug.LogError("A game save with this name already exists.");
     }
 }

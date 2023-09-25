@@ -86,10 +86,10 @@ public class LoadGameMenu : MonoBehaviour
         }
     }
 
-    // Add your logic for loading a game save here
+    // Load Game if applicable
     public void LoadGameButtonPress()
     {
-        // Implement your loading logic here, using currentSelectedGameSave
+        // Loading logic
         if (!string.IsNullOrEmpty(currentSelectedGameSave))
         {
             // Load the selected game save
@@ -102,7 +102,7 @@ public class LoadGameMenu : MonoBehaviour
         }
     }
 
-    // Delete the currently selected game save
+    // Delete the currently selected game save if applicable
     public void DeleteGameButtonPress()
     {
         if (!string.IsNullOrEmpty(currentSelectedGameSave))

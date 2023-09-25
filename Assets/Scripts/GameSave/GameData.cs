@@ -6,13 +6,15 @@ using UnityEngine;
 public class GameData
 {
     // Define the data you want to save here
+    public string gameName;
     public string playerName;
-
-    // Add more variables as needed
+    public int lastCheckpoint;
 
     // Constructor for GameData
-    public GameData(string name)
+    public GameData(string newGameName)
     {
-        playerName = name;
+        gameName = newGameName; // this is the name of the save file
+        playerName = "Default Player Name";
+        lastCheckpoint = 0;
     }
 }

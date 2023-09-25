@@ -4,10 +4,9 @@ using System.Collections.Generic;
 
 public class GameSaveManager : MonoBehaviour
 {
+    #region Singleton
     private static GameSaveManager instance;
 
-    private string saveFolderName = "GameSaves";
-    private string saveFolderPath;
 
     public static GameSaveManager Instance
     {
@@ -45,6 +44,10 @@ public class GameSaveManager : MonoBehaviour
             Directory.CreateDirectory(saveFolderPath);
         }
     }
+    #endregion
+
+    private string saveFolderName = "GameSaves";
+    private string saveFolderPath;
 
     // Check if any game save file exists
     public bool AnySaveExists()
