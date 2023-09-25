@@ -7,7 +7,7 @@ public class GameSaveFileTool : MonoBehaviour
 {
     private GameData gameData;
 
-    [MenuItem("Custom Tools/Create Game Save File")]
+    [MenuItem("USKB Tools/GameSave/Create Game Save File")]
     private static void CreateGameSaveFile()
     {
         // Create a new instance of GameData with the specified input fields
@@ -17,7 +17,7 @@ public class GameSaveFileTool : MonoBehaviour
         EditorWindow.CreateInstance<GameSaveFileWindow>().ShowDialog(gameData);
     }
 
-    [MenuItem("Custom Tools/Get Save File Path")]
+    [MenuItem("USKB Tools/GameSave/Get Save File Path")]
     private static void GetSaveFilePath()
     {
         // Get the path where the save files are stored in the same location as GameSaves
