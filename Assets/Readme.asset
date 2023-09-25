@@ -20,4 +20,12 @@ MonoBehaviour:
       world management and more.
     linkText: 
     url: 
+  - heading: Github Repo
+    text: The Github repository for this project.
+    linkText: Repo
+    url: https://github.com/kbrown2193/UnityShowcaseKB
+  - heading: Github Wiki
+    text: The Github wiki page for this project
+    linkText: Wiki
+    url: https://github.com/kbrown2193/UnityShowcaseKB/wiki
   loadedLayout: 1
