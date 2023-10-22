@@ -6,8 +6,8 @@ public class OrientationInformer : MonoBehaviour
     private Transform _transform;
 
     public Vector2 WorldCenterGeographicCoordinates = new Vector2(0, 0);
-    public float UnityDistancePerGeographicCoordinatesDegree = 1f;
-    public float UnityDistancePerElevation = 1f;
+    public float UnityDistancePerGeographicCoordinatesDegree = 1f; // 111139 for one to one
+    public float UnityDistancePerElevation = 1f; // 1 for 1 to one
 
     private void Start()
     {

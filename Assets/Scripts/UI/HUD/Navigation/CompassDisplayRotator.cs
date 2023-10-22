@@ -10,6 +10,7 @@ public class CompassDisplayRotator : MonoBehaviour
     [SerializeField]
     private NeedleRotationDirection needleRotationDirection = NeedleRotationDirection.CounterClockwise;
 
+    [SerializeField]
     private float rotationOffsetInitial = 0.0f; // any inital offset for this image?
 
     private Vector3 rotationVector = Vector3.zero;

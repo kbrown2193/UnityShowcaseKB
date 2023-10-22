@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3238718036624719998}
   - component: {fileID: 3238718036624719992}
   - component: {fileID: 3238718036624719993}
-  - component: {fileID: 3238718036624719994}
+  - component: {fileID: 727936780}
   m_Layer: 5
   m_Name: CompassDisplay_TextureScrolling
   m_TagString: Untagged
@@ -81,7 +81,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3238718036624719994
+--- !u!114 &727936780
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3238718036624719999}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1abd5929064624f4eae30ee3d44d6983, type: 3}
+  m_Script: {fileID: 11500000, guid: 80850881ae8a8034e9c7bf2a5a2b16b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   compassImage: {fileID: 3238718037131901431}
@@ -452,7 +452,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3238718036624719994}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIFrameworkKB.CompassDisplayTextureScroller, Assembly-CSharp
         m_MethodName: SetCompassByDegree
         m_Mode: 0

@@ -14,6 +14,9 @@ public class OICompassRotator : MonoBehaviour
 
     private void Update()
     {
-        compassDisplayRotator.SetCompassByDegree(orientationInformer.DirectionLookingToCompassDegrees());
+        if(isUpdating)
+        {
+            compassDisplayRotator.SetCompassByDegree(orientationInformer.DirectionLookingToCompassDegrees());
+        }
     }
 }

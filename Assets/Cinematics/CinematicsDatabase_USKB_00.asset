@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 001eda7f0749b7d4d88dc12211735d37, type: 3}
+  m_Name: CinematicsDatabase_USKB_00
+  m_EditorClassIdentifier: 
+  cinematicDataList:
+  - cinematicID: USKB_01_00
+    timelineAsset: {fileID: 11400000, guid: 4702ab4fb5add604f9baf90ea5c2292d, type: 2}
+  - cinematicID: USKB_01_01
+    timelineAsset: {fileID: 11400000, guid: e0427b61ef44d20479e75bf15b97396c, type: 2}
