@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Playables;
 
-[CreateAssetMenu(fileName = "CinematicsDatabase", menuName = "Cinematics/Cinematics Database")]
+[CreateAssetMenu(fileName = "CinematicsDatabase", menuName = "USKB/Cinematics/Cinematics Database")]
 public class CinematicsDatabase : ScriptableObject
 {
     [System.Serializable]

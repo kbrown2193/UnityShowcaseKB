@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7f674a81f1bf3c4aa2d8b41e22deef2, type: 3}
+  m_Name: DisplayStandMaterialDatabase
+  m_EditorClassIdentifier: 
+  displayStandDataList:
+  - displayStandID: Material_000_DeformMeshEarth
+    details: 'Deform Mesh Earth Shader : Deforms geometry of mesh based on elevation
+      map.  Requires more vertices for best results.'
+    itemMaterial: {fileID: 2100000, guid: 5b84531dcdae88145add21ef1277e2dc, type: 2}
+    itemModel: {fileID: -5026821224927249773, guid: 12e89b807e28b4b4f814755e57b6283c,
+      type: 3}
+    pedestalMaterial: {fileID: 2100000, guid: 0a6ba6807fd0903408a26a3b32c523ab, type: 2}
+    pedestalModel: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  - displayStandID: Material_001_Dissolve
+    details: Dissolve Shader
+    itemMaterial: {fileID: 2100000, guid: 8f0acdf6f40a6984ea91351758ddbd56, type: 2}
+    itemModel: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+    pedestalMaterial: {fileID: 2100000, guid: 0a6ba6807fd0903408a26a3b32c523ab, type: 2}
+    pedestalModel: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  - displayStandID: Material_002_ElectricFX
+    details: Electric FX Shader
+    itemMaterial: {fileID: 2100000, guid: 03fcae5155c1d2c40839752860788ca3, type: 2}
+    itemModel: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+    pedestalMaterial: {fileID: 2100000, guid: 0a6ba6807fd0903408a26a3b32c523ab, type: 2}
+    pedestalModel: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  - displayStandID: Material_003_ForceField
+    details: Force Field Shader
+    itemMaterial: {fileID: 2100000, guid: e00fd51d9395df94fafa05150ab794f9, type: 2}
+    itemModel: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+    pedestalMaterial: {fileID: 2100000, guid: 0a6ba6807fd0903408a26a3b32c523ab, type: 2}
+    pedestalModel: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  - displayStandID: Material_004_Hologram
+    details: Hologram Shader
+    itemMaterial: {fileID: 2100000, guid: 8e2ef9c8c99c0b54e9f72b5e23294486, type: 2}
+    itemModel: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+    pedestalMaterial: {fileID: 2100000, guid: 0a6ba6807fd0903408a26a3b32c523ab, type: 2}
+    pedestalModel: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}

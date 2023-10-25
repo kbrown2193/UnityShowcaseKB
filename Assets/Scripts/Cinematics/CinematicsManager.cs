@@ -8,7 +8,7 @@ public class CinematicsManager : MonoBehaviour
     [SerializeField]
     private PlayableDirector playableDirector;
     [SerializeField]
-    private CinematicsDatabase cinematicsDatabase;
+    private CinematicsDatabase cinematicsDatabase; // Assign this asset to change cinematics
 
     #region
     public static CinematicsManager Instance

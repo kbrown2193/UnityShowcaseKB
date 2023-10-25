@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2077928077693243659
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_ElectricFX_00
+  m_Shader: {fileID: -6465566751694194690, guid: 76d2ed603a1f7174ba11f480e775b85a,
+    type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_fb2a0a235be34cd8ad4f10591001d7b4:
+        m_Texture: {fileID: 2800000, guid: ab9a20baef1849c48b0e1fc7c5456fa1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - Vector1_da63b95fee9548faaca53a42c710abee: 4
+    - Vector1_e168249623324b1b9bcabe7030d438c3: 0.11
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    m_Colors:
+    - Color_defe1fd427714ffca6787fd52e361ac1: {r: 16.854473, g: 0, b: 23.968628, a: 1}
+    - Vector2_29a42f5bb2c44c19b0091b3d1f6cb167: {r: 4, g: 4, b: 0, a: 0}
+    - Vector2_88d99510fa7144259c2dfab16462b487: {r: 0.1, g: 0.7, b: 0, a: 0}
+    - Vector2_d56ee530ba8242259c6154184d4c2eff: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
