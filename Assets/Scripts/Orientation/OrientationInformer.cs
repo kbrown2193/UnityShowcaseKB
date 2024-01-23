@@ -9,6 +9,11 @@ public class OrientationInformer : MonoBehaviour
     public float UnityDistancePerGeographicCoordinatesDegree = 1f; // 111139 for one to one
     public float UnityDistancePerElevation = 1f; // 1 for 1 to one
 
+    private float direction;
+    private Vector2 geoCoordinates;
+    private float elevation;
+    private float pitchAngle;
+
     private void Start()
     {
         // Assign the transform component if it's not already assigned
@@ -21,7 +26,6 @@ public class OrientationInformer : MonoBehaviour
     public float DirectionLookingToCompassDegrees()
     {
         Vector3 forward = _transform.forward;
-        float pitchAngle = GetPitchAngle();
 
         if (Mathf.Approximately(pitchAngle, 90f))
         {
@@ -63,23 +67,35 @@ public class OrientationInformer : MonoBehaviour
         return elevation;
     }
 
+    /// <summary>
+    /// X Rotation is on the main camera, currently use that OrientationInformer to GetPitchAngle
+    /// </summary>
+    /// <returns></returns>
     public float GetPitchAngle()
     {
-        Vector3 localForward = _transform.forward;
-        float pitchAngle = Mathf.Rad2Deg * Mathf.Atan2(localForward.y, Mathf.Sqrt(localForward.x * localForward.x + localForward.z * localForward.z));
+        float xRotation = _transform.rotation.eulerAngles.x;
+
+        // Adjust the angle to be in the range of -180 to 180 degrees
+        if (xRotation > 180f)
+        {
+            xRotation -= 360f;
+        }
+
+        // Clamp the angle between -90 and 90 degrees
+        pitchAngle = -Mathf.Clamp(xRotation, -90f, 90f);
 
         return pitchAngle;
     }
 
     void Update()
     {
-        float direction = DirectionLookingToCompassDegrees();
-        Vector2 geoCoordinates = PositionToGeographicCoordinates();
-        float elevation = PositionToElevation();
-        float pitchAngle = GetPitchAngle();
-        Debug.Log("Direction Looking: " + direction + " degrees");
-        Debug.Log("Geographic Coordinates: Latitude " + geoCoordinates.x + ", Longitude " + geoCoordinates.y);
-        Debug.Log("Elevation: " + elevation + " units");
-        Debug.Log("Pitch Angle: " + pitchAngle + " degrees");
+        direction = DirectionLookingToCompassDegrees();
+        geoCoordinates = PositionToGeographicCoordinates();
+        elevation = PositionToElevation();
+        pitchAngle = GetPitchAngle();
+        //Debug.Log("Direction Looking: " + direction + " degrees");
+        //Debug.Log("Geographic Coordinates: Latitude " + geoCoordinates.x + ", Longitude " + geoCoordinates.y);
+        //Debug.Log("Elevation: " + elevation + " units");
+        //Debug.Log("Pitch Angle: " + pitchAngle + " degrees");
     }
 }

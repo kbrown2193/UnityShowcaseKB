@@ -1,18 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Minimap : MonoBehaviour
+public class Minimap : MonoBehaviour, UIElement
 {
-    // Start is called before the first frame update
-    void Start()
+    #region UIElement Interface Methods
+    public void Show()
     {
-        
+        gameObject.SetActive(true);
+        Debug.LogWarning("TODO: add additional logic to customize the behavior when showing the minimap");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Hide()
     {
-        
+        gameObject.SetActive(false);
+        Debug.LogWarning("TODO: add additional logic to customize the behavior when hiding the minimap");
     }
+
+    public void ToggleVisibility()
+    {
+        gameObject.SetActive(!gameObject.activeSelf);
+        Debug.LogWarning("TODO: add additional logic to customize the behavior when toggling the visibility of the minimap");
+    }
+
+    public bool IsVisible()
+    {
+        return gameObject.activeSelf;
+    }
+
+    #endregion
 }

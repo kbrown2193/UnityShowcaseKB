@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MainMenu : MonoBehaviour
+public class MainMenu : MonoBehaviour, UIElement
 {
     [SerializeField] private Animator animator;
 
@@ -41,5 +41,30 @@ public class MainMenu : MonoBehaviour
         {
             Debug.LogError("Invalid MainMenuPage index: " + pageIndex);
         }
+    }
+
+    // Implementing UIElement interface methods
+
+    public void Show()
+    {
+        gameObject.SetActive(true);
+        Debug.LogWarning("TODO: add additional logic here to initialize the menu as needed");
+    }
+
+    public void Hide()
+    {
+        gameObject.SetActive(false);
+        Debug.LogWarning("TODO: add additional logic here to initialize the menu as needed");
+    }
+
+    public void ToggleVisibility()
+    {
+        gameObject.SetActive(!gameObject.activeSelf);
+        Debug.LogWarning("TODO: add additional logic here to toggle visibility as needed");
+    }
+
+    public bool IsVisible()
+    {
+        return gameObject.activeSelf;
     }
 }

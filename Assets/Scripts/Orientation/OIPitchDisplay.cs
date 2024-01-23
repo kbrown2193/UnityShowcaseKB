@@ -4,7 +4,7 @@ using TMPro;
 public class OIPitchDisplay : MonoBehaviour
 {
     [SerializeField]
-    private OrientationInformer orientationInformer;
+    private OrientationInformer orientationInformer; // using cameras OrientationInformer for X rotation into pitch
 
     [SerializeField]
     private TextMeshProUGUI pitchText;

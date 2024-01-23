@@ -46,7 +46,7 @@ public class LevelLoader : MonoBehaviour
     public void BeginLoadingLevel(string levelName)
     {
         // Enable loading screen
-        loadingScreen.gameObject.SetActive(true);
+        loadingScreen.Show();
 
         // Start async loading
         StartCoroutine(LoadLevelAsync(levelName));
@@ -66,7 +66,7 @@ public class LevelLoader : MonoBehaviour
             // Calculate the progress of loading (0 to 1)
             float progress = Mathf.Clamp01(asyncOperation.progress / 0.9f); // 0.9 is used because isDone becomes true when progress is 0.9
 
-            // Update your loading screen with the progress
+            // Update loading screen with the progress
             loadingScreen.UpdateProgress(progress);
 
             
@@ -82,7 +82,9 @@ public class LevelLoader : MonoBehaviour
             yield return null; // Yield to the next frame
         }
 
+        UIManager.Instance.FindUIClassesInScene();
+
         // Disable loading screen
-        loadingScreen.gameObject.SetActive(false);
+        loadingScreen.Hide();
     }
 }
